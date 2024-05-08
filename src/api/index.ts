@@ -8,30 +8,28 @@ interface Student {
   grade: number;
 }
 
-const BASE_URL = 'https://vue.zeyadobaia.com';
+const BASE_URL = 'https://vue.zeyadobaia.com/api';
+// change this to a unique name per team (no spaces or funny characters please :D)
+const CLASS_NAME = "myclassname"
 
-// Base URL for the API
 // Methods for CRUD operations
 export const getStudents = async (): Promise<Student[]> => {
-  const response = await axios.get(`${BASE_URL}/students/`);
+  const response = await axios.get(`${BASE_URL}/${CLASS_NAME}/students/`);
   return response.data;
 };
 
 export const addStudent = async (student: Student): Promise<Student> => {
-  const response = await axios.post(`${BASE_URL}/students/`, student);
+  const response = await axios.post(`${BASE_URL}/${CLASS_NAME}/students/`, student);
   return response.data;
 };
 
-export const updateStudent = async (
-  id: number,
-  student: Student
-): Promise<Student> => {
-  const response = await axios.put(`${BASE_URL}/students/${id}`, student);
+export const updateStudent = async (id: number, student: Student): Promise<Student> => {
+  const response = await axios.put(`${BASE_URL}/${CLASS_NAME}/students/${id}`, student);
   return response.data;
 };
 
 export const deleteStudent = async (id: number): Promise<void> => {
-  await axios.delete(`${BASE_URL}/students/${id}`);
+  await axios.delete(`${BASE_URL}/${CLASS_NAME}/students/${id}`);
 };
 
 // Export schema for using the API

@@ -84,16 +84,25 @@
       </div>
       <div class="flex items-center justify-end">
         <button
+          class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline mx-2"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
           class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="button"
         >
-          Add
+          Save
         </button>
       </div>
     </div>
   </div>
 </template>
 
+
 <script setup>
 import { ref, onMounted } from 'vue';
+import {getStudents } from '../api'
+
 </script>
